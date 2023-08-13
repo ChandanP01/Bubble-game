@@ -5,9 +5,8 @@ let score = 0;
 let hitNum = 0;
 
 function createBubble() {
-    const btm = document.querySelector('.bottom');
     for (let i = 1; i <= 160; i++) {
-        btm.innerHTML += `<div class="bubble">${Math.floor(Math.random() * 10)}</div>`;
+        btmSec.innerHTML += `<div class="bubble">${Math.floor(Math.random() * 10)}</div>`;
     }
 }
 
@@ -40,6 +39,7 @@ btmSec.addEventListener('click',(e)=>{
     
     if(hitNum === clickedNum){
         updateScore();
+        btmSec.innerHTML = "";
         createBubble();
         newHit();
     }
